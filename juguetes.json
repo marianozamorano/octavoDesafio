@@ -1,0 +1,107 @@
+[
+    {
+        "nombre": "Muñeca",
+        "categoria": "Juguetes para niñas",
+        "precio": 15.99
+    },
+    {
+        "nombre": "Carro de juguete",
+        "categoria": "Juguetes para niños",
+        "precio": 12.49
+    },
+    {
+        "nombre": "Rompecabezas",
+        "categoria": "Juegos de mesa",
+        "precio": 9.99
+    },
+    {
+        "nombre": "Peluche de osito",
+        "categoria": "Peluches",
+        "precio": 7.99
+    },
+    {
+        "nombre": "Set de bloques de construcción",
+        "categoria": "Juegos de construcción",
+        "precio": 19.99
+    },
+    {
+        "nombre": "Patineta",
+        "categoria": "Deportes",
+        "precio": 24.99
+    },
+    {
+        "nombre": "Puzzle 3D de dinosaurios",
+        "categoria": "Juegos educativos",
+        "precio": 29.99
+    },
+    {
+        "nombre": "Lego Star Wars",
+        "categoria": "Juegos de construcción",
+        "precio": 39.99
+    },
+    {
+        "nombre": "Muñeco de acción",
+        "categoria": "Juguetes para niños",
+        "precio": 14.99
+    },
+    {
+        "nombre": "Set de cocina para niños",
+        "categoria": "Juguetes educativos",
+        "precio": 18.99
+    },
+    {
+        "nombre": "Barbie Fashionista",
+        "categoria": "Juguetes para niñas",
+        "precio": 29.99
+    },
+    {
+        "nombre": "Camión de bomberos de juguete",
+        "categoria": "Vehículos",
+        "precio": 16.99
+    },
+    {
+        "nombre": "Pelota de fútbol",
+        "categoria": "Deportes",
+        "precio": 9.99
+    },
+    {
+        "nombre": "Cubo de Rubik",
+        "categoria": "Juegos de mesa",
+        "precio": 11.99
+    },
+    {
+        "nombre": "Consola de videojuegos portátil",
+        "categoria": "Electrónica",
+        "precio": 49.99
+    },
+    {
+        "nombre": "Set de maquillaje para niñas",
+        "categoria": "Juguetes para niñas",
+        "precio": 14.99
+    },
+    {
+        "nombre": "Avión de juguete",
+        "categoria": "Vehículos",
+        "precio": 21.99
+    },
+    {
+        "nombre": "Muñeco de peluche de unicornio",
+        "categoria": "Peluches",
+        "precio": 8.99
+    },
+    {
+        "nombre": "Microscopio para niños",
+        "categoria": "Juguetes educativos",
+        "precio": 34.99
+    },
+    {
+        "nombre": "Kit de arte y manualidades",
+        "categoria": "Juguetes creativos",
+        "precio": 19.99
+    },
+    {
+        "nombre": "Patines en línea ajustables",
+        "categoria": "Deportes",
+        "precio": 29.99
+    }
+]
