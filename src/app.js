@@ -13,6 +13,8 @@ const sessionsRouter = require("./routes/sessions.router.js");
 const passport = require("passport");
 const initializePassport = require("./config/passport.config.js");
 const checkAuthorization = require("./authorizationMiddleware.js");
+const mockingRouter = require('./routes/mocking.router.js');
+const errorHandler = require('./errorHandler.js');
 
 //Express-Handlebars
 app.engine("handlebars", exphbs.engine());
@@ -23,6 +25,7 @@ app.set("views", "./src/views");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("./src/public"));
+app.use(errorHandler);
 
 //Middleware de Session:
 app.use(session({
@@ -52,6 +55,7 @@ app.use("/api/products", productsRouter);
 app.use("/api/carts", checkAuthorization, cartsRouter);
 app.use("/api/sessions", sessionsRouter);
 app.use("/", viewsRouter);
+app.use('/api', mockingRouter);
 
 const httpServer = app.listen(PUERTO, () => {
     console.log(`Escuchando en el puerto ${PUERTO}`);

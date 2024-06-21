@@ -5,6 +5,7 @@ const ProductManager = require("../controllers/product-manager.js");
 const productManager = new ProductManager();
 //Aca le vamos a sacar el path, porque ya no tenemos un json local.
 const checkAuthorization = require("../authorizationMiddleware.js"); // Importa el middleware
+const { ERROR_CODES, ERROR_MESSAGES, CustomError } = require('../errors.js');
 
 
 // 1) Listar todos los productos. 
@@ -78,22 +79,18 @@ router.get("/:pid", async (req, res) => {
     try {
         const producto = await productManager.getProductById(id);
         if (!producto) {
-            return res.json({
-                error: "Producto no encontrado"
-            });
+            throw new CustomError(ERROR_CODES.PRODUCT_NOT_FOUND, ERROR_MESSAGES.PRODUCT_NOT_FOUND);
         }
 
         res.json(producto);
     } catch (error) {
-        console.error("Error al obtener producto", error);
-        res.status(500).json({
-            error: "Error interno del servidor"
-        });
+        next(error);
     }
+    
 });
 
 // 3) Agregar nuevo producto: 
-router.post("/", checkAuthorization, async (req, res) => {
+router.post("/", checkAuthorization, async (req, res, next) => {
     // Verificar si el usuario tiene el rol de administrador
     if (req.user && req.user.role === "admin") {
         try {
@@ -108,10 +105,7 @@ router.post("/", checkAuthorization, async (req, res) => {
                 message: "Producto agregado exitosamente"
             });
         } catch (error) {
-            console.error("Error al agregar producto", error);
-            res.status(500).json({
-                error: "Error interno del servidor"
-            });
+            next(new CustomError(ERROR_CODES.INVALID_PRODUCT_DATA, ERROR_MESSAGES.INVALID_PRODUCT_DATA));
         }
     } else {
         // Si el usuario no tiene permisos de administrador, devolver un mensaje de error
